@@ -1,0 +1,89 @@
+@tailwind base;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply border-b-2 border-blue-700;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.content p {
+  @apply my-6;
+}
+
+.content ul {
+  @apply my-6;
+}
+
+.bg-gradient-deg {
+  display: inline-block;
+  background:
+    linear-gradient(to right, #0698E5 50%, #E2E8F0 50%) top;
+  background-repeat: no-repeat;
+  background-size:100% 6px;
+}
+
+.bg-gradient-ecosystem {
+background: linear-gradient(270deg, rgba(83, 247, 139, 0.10) 0%, rgba(83, 170, 247, 0.10) 26.95%, rgba(91, 21, 241, 0.10) 49.96%, rgba(235, 83, 136, 0.10) 73.45%, rgba(242, 165, 63, 0.10) 100%)
+}
+
+.bg-gradient-comming-soon {
+background: linear-gradient(90deg, #C4E0F5 10%, #EDF6FB 30%, #A0CFE9 60%, #A5BACD 100%)
+}
+
+.tab-item-animate {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  transition: transform 0.25s;
+  border-radius: 9999px;
+  scale: calc(100%/3);
+}
+
+.tabs .tabs-item:first-child.active ~ .tab-item-animate {
+  transform: translateX(0) ;
+}
+
+.tabs .tabs-item:nth-child(2).active ~ .tab-item-animate {
+  transform: translateX(100%);
+}
+
+.tabs .tabs-item:nth-child(3).active ~ .tab-item-animate {
+  transform: translateX(calc(200%));
+}
+
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 1200ms ease-out, transform 600ms ease-out,
+    visibility 1200ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.temporary-bounce {
+  -webkit-animation-iteration-count: 10;
+  animation-iteration-count: 10;
+}
+
+.navbar-mobile{
+    background:lightblue;
+    height:100%;
+    -webkit-animation: expand 5s;
+}
+
+@-webkit-keyframes expand{
+    0%{height:0px}
+    100%{height:100%}
+}
